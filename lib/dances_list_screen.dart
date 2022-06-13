@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DancesListScreen extends StatelessWidget {
@@ -97,20 +96,28 @@ class DanceStyleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.network(
-          url,
-          width: 70,
-          height: 70,
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () => print("On"),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 10,
         ),
-        const SizedBox(
-          width: 10,
-          height: 100,
+        child: Row(
+          children: [
+            Image.network(
+              url,
+              width: 70,
+              height: 70,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(name),
+          ],
         ),
-        Text(name),
-      ],
+      ),
     );
   }
 }
