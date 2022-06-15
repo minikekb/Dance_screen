@@ -1,3 +1,4 @@
+import 'package:dance_life/dance_details_screen.dart';
 import 'package:flutter/material.dart';
 
 class DancesListScreen extends StatelessWidget {
@@ -97,7 +98,10 @@ class DanceStyleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => print("On"),
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => DanceDetailScreen()));
+      },
       child: Padding(
         padding: const EdgeInsets.only(
           top: 10,
